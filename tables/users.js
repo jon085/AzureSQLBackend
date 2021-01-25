@@ -14,7 +14,7 @@ var table = azureMobileApps.table();
 table.dynamicSchema = true;
 
 // Configure table options
-table.access = accessRights.anonymous;
+table.access = accessRights.authenticated;
 table.read.access = accessRights.anonymous;
 table.insert.access = accessRights.anonymous;
 table.update.access = accessRights.anonymous;
