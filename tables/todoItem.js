@@ -8,6 +8,9 @@
 var azureMobileApps = require('azure-mobile-apps');
 const accessRights = {anonymous: "anonymous", authenticated: "authenticated", disabled: "disabled"}; //Table Access Parameters
 
+// Link with table name
+azureMobileApps.tables.add('TodoItem');
+
 // Create a new table definition
 var table = azureMobileApps.table();
 
