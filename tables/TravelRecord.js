@@ -15,7 +15,7 @@ var table = azureMobileApps.table();
 //  1) A Static schema
 
 table.columns = {
- "id": "long",
+ "id": "string",
  "text": "string",
  "complete": "boolean",
  "latitude": "double",
