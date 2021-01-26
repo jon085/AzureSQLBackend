@@ -38,6 +38,9 @@ table.delete.access = 'disabled';
 
 // Configure specific code when the client does a request
 table.read(function (context) {
+    if (context.query.where({ text: context.item.text }).count() > 0 ) {
+        return false;
+    }
     return context.execute();
 });
 
