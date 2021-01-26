@@ -5,7 +5,6 @@ var express = require('express'),
 var app = express(),
     mobile = azureMobileApps({ homePage: true });
 
-mobile.homePage = true; //
 // Define the database schema that is exposed
 mobile.tables.import('./tables');
 

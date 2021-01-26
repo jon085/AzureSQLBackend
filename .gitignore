@@ -14,6 +14,9 @@ lerna-debug.log*
 #Ignore the packet-lock
 package-lock.json
 
+#Ignore the Readme
+README.md
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
