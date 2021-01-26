@@ -15,10 +15,10 @@ table.dynamicSchema = true;
 
 // Configure table options
 table.access = accessRights.disabled;
-// table.read.access = accessRights.anonymous;
-// table.insert.access = accessRights.anonymous;
-// table.update.access = accessRights.anonymous;
-// table.delete.access = accessRights.anonymous;
+table.read.access = accessRights.disabled;
+table.insert.access = accessRights.disabled;
+table.update.access = accessRights.disabled;
+table.delete.access = accessRights.disabled;
 
 // Configure specific code when the client does a request
 table.read(function (context) {
