@@ -26,11 +26,15 @@ table.columns = {
 table.dynamicSchema = false;
 
 // Configure table options
-table.access = accessRights.anonymous;
-table.read.access = accessRights.anonymous;
-table.insert.access = accessRights.anonymous;
-table.update.access = accessRights.anonymous;
-table.delete.access = accessRights.anonymous;
+// table.access = accessRights.anonymous;
+// table.read.access = accessRights.anonymous;
+// table.insert.access = accessRights.anonymous;
+// table.update.access = accessRights.anonymous;
+// table.delete.access = accessRights.anonymous;
+
+table.insert.access = 'disabled';
+table.update.access = 'disabled';
+table.delete.access = 'disabled';
 
 // Configure specific code when the client does a request
 table.read(function (context) {
