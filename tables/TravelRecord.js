@@ -22,6 +22,7 @@ table.columns = {
  "complete": "boolean",
  "latitude": "double",
  "longitude": "double",
+ "lastField": "string"
 };
 
 //  2) A Dynamic schema [False if creating Columns, Remove table.columns if dynamicSchema == true]
