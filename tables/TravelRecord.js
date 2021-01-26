@@ -28,9 +28,6 @@ table.columns = {
 //  2) A Dynamic schema [False if creating Columns, Remove table.columns if dynamicSchema == true]
 table.dynamicSchema = false;
 
-// Turn on soft delete. [Adds Delete Property in Table] -> Query with IncludeDeleted()
-table.softDelete = true;
-
 // Configure table options
 table.access = accessRights.anonymous;
 
