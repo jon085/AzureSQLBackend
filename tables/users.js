@@ -14,11 +14,11 @@ var table = azureMobileApps.table();
 table.dynamicSchema = true;
 
 // Configure table options
-table.access = accessRights.anonymous;
-table.read.access = accessRights.anonymous;
-table.insert.access = accessRights.anonymous;
-table.update.access = accessRights.anonymous;
-table.delete.access = accessRights.anonymous;
+table.access = accessRights.disabled;
+// table.read.access = accessRights.anonymous;
+// table.insert.access = accessRights.anonymous;
+// table.update.access = accessRights.anonymous;
+// table.delete.access = accessRights.anonymous;
 
 // Configure specific code when the client does a request
 table.read(function (context) {
