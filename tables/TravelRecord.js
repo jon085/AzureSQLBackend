@@ -32,11 +32,6 @@ table.access = accessRights.anonymous;
 
 // Configure specific code when the client does a request
 table.read(function (context) {
-    let newQ = new query("select * from [dbo].[TravelRecord] where Text = " + context.item.Text).execute();
-    if (newQ.count() > 0) {
-    // if (context.query.where({ text: context.item.text }).count() > 0 ).execute() {
-        return false;
-    }
     return context.execute();
 });
 
