@@ -6,6 +6,7 @@
 // https://github.com/azure/azure-mobile-apps-node/tree/master/samples/todo
 
 var azureMobileApps = require('azure-mobile-apps');
+const { query } = require('express');
 const accessRights = {anonymous: "anonymous", authenticated: "authenticated", disabled: "disabled"}; //Table Access Parameters
 
 // Create a new table definition
@@ -14,6 +15,7 @@ var table = azureMobileApps.table();
 // Configure the table schema - there are two options:
 //  1) A Static schema
 
+//Doing so automatically creates the table, and includes default parameters: version createdAt updatedAt
 table.columns = {
  "id": "string",
  "text": "string",
@@ -26,19 +28,13 @@ table.columns = {
 table.dynamicSchema = false;
 
 // Configure table options
-// table.access = accessRights.anonymous;
-// table.read.access = accessRights.anonymous;
-// table.insert.access = accessRights.anonymous;
-// table.update.access = accessRights.anonymous;
-// table.delete.access = accessRights.anonymous;
-
-table.insert.access = 'disabled';
-table.update.access = 'disabled';
-table.delete.access = 'disabled';
+table.access = accessRights.anonymous;
 
 // Configure specific code when the client does a request
 table.read(function (context) {
-    if (context.query.where({ text: context.item.text }).count() > 0 ) {
+    let newQ = new query("select * from [dbo].[TravelRecord] where Text = " + context.item.Text).execute();
+    if (newQ.count() > 0) {
+    // if (context.query.where({ text: context.item.text }).count() > 0 ).execute() {
         return false;
     }
     return context.execute();
