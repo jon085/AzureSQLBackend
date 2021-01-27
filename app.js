@@ -8,6 +8,8 @@ var app = express(),
 // Define the database schema that is exposed
 mobile.tables.import('./tables');
 
+mobileApp.tables.add('Post');// Create a table association
+
 // Provide initialization of any tables that are statically defined
 mobile.tables.initialize().then(function () {
     // Add the mobile API so it is accessible as a Web API
